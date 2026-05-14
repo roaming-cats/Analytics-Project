@@ -198,6 +198,8 @@ A separate KPI Measures table was created to organize all DAX measures used in t
  
 The EDA Dashboard successfully presented important diabetes-related insights using Power BI visualizations and KPI measures. The project demonstrated how Exploratory Data Analysis can help analyze healthcare data and identify trends and relationships among different variables.
 
+<img width="1024" height="577" alt="image" src="https://github.com/user-attachments/assets/eaed6383-e802-4a31-9097-442331f5bf2f" />
+
 <br><br><br>
 
  <h2 align="center" style="margin-bottom: 5px;">
