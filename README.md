@@ -22,7 +22,7 @@
 
 ---
 
-## ╰┈➤ Conceptualize the Data
+### ╰┈➤ Conceptualize the Data
  
 **What does each row represent?**
  
@@ -30,49 +30,52 @@ Each row represents a unique clinical encounter or medical profile of an individ
  
 ---
  
-## ╰┈➤ Locate Solvable Problems
+### ╰┈➤ Locate Solvable Problems
  
-### 1. Duplicates found
+#### 1. Duplicates found
  
 - Removed 14 duplicates
-### 2. Inconsistent casing format
+#### 2. Inconsistent casing format
  
 - Used PROPER formula to 35806 rows for proper casing
-### 3. Less than or equal to 5 years old having "No Info" values (5505 rows)
+#### 3. Less than or equal to 5 years old having "No Info" values (5505 rows)
  
 - Imputation; I interpreted the smoking history column as only targeted on first hand smoking, so I based my understanding on this premise. Based on that premise, I considered that 5 years old and under do not have the capacity to be smoking, so I just changed the values to "Never"
-### 4. Less than or equal to 5 years old having "Not Currently", "Ever", and "Current" smoking history values (103 rows)
+#### 4. Less than or equal to 5 years old having "Not Currently", "Ever", and "Current" smoking history values (103 rows)
  
 - Imputation; Just like the previous issue, I considered that children aged 5 years old and under are unlikely to have a smoking history or to have smoked previously. Therefore, any smoking history values ("Not Current", "Ever", and "Current") for this age group were changed as "Never"
 ---
  
-## ╰┈➤ Evaluate Unsolvable Issues
+### ╰┈➤ Evaluate Unsolvable Issues
  
-### 1. BMI of > 80
+#### 1. BMI of > 80
  
 - I kept the outliers since they might be real events. 
-### 2. Ambiguity between "Former" and "Not Current" values (15713 rows)
+#### 2. Ambiguity between "Former" and "Not Current" values (15713 rows)
  
 - Smoking history had both "Former" and "Not Current" categories, which seem similar but may not mean exactly the same thing. To avoid mixing unclear data, they were kept as separate categories. I assumed "Former" means a clear past smoker, while "Not Current" only means the person is not smoking at the moment, but it does not clearly confirm whether they ever smoked before.
 ---
  
-## ╰┈➤ Augment the Data
+### ╰┈➤ Augment the Data
  
-### 1. Created `age_group` column for grouping ages into categories (like Child, Adult, and Senior) to see how diabetes risks change at different stages of life
- 
-- If age is below 13, classify as "Child."
-- If age is below 20, classify as "Teen."
-- If age is below 40, classify as "Young Adult."
-- If age is below 60, classify as "Middle-Aged."
-- If age is below 80, classify as "Senior."
-- If age is 80 or above, classify as "Elderly."
-### 2. Created a new column called `race` to combine the 5 separate race columns into one `race` label to make the data easier to read. After that, I deleted the columns "race:AfricanAmerican", "race:Asian", "race:Caucasian", "race:Hispanic", "race:Other" since they are not needed because of the race column.
+#### 1. Created `age_group` column for grouping ages into categories (like Child, Adult, and Senior) to see how diabetes risks change at different stages of life
+
+| age          | age_group   |
+|--------------|-------------|
+| Below 13     | Child       |
+| 13 – 19      | Teen        |
+| 20 – 39      | Young Adult |
+| 40 – 59      | Middle-Aged |
+| 60 – 79      | Senior      |
+| 80 and above | Elderly     |
+
+#### 2. Created a new column called `race` to combine the 5 separate race columns into one `race` label to make the data easier to read. After that, I deleted the columns "race:AfricanAmerican", "race:Asian", "race:Caucasian", "race:Hispanic", "race:Other" since they are not needed because of the race column.
 
 <img width="597" height="38" alt="image" src="https://github.com/user-attachments/assets/e3c956e1-0adb-4867-bc7b-017f701e1073" />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <img width="128" height="118" alt="image" src="https://github.com/user-attachments/assets/26928f53-1119-4e06-96cd-32844b9107ff" />
 
-### 3. Added `patient_id` to uniquely identify each patient and `race_id` to keep race categories organized and consistent for analysis
+#### 3. Added `patient_id` to uniquely identify each patient and `race_id` to keep race categories organized and consistent for analysis
  
 | race_id | Race             |
 |---------|------------------|
@@ -84,7 +87,169 @@ Each row represents a unique clinical encounter or medical profile of an individ
  
 - patient_id: p-1, p-2, p-3, p-4, … p-99986
 ---
- 
-## ╰┈➤ Note and Document
+
+### ╰┈➤ Note and Document
 
 <img width="1290" height="704" alt="image" src="https://github.com/user-attachments/assets/bcd9e5f4-30e3-49bd-a618-a613c2c02d0a" />
+
+<br><br><br>
+
+<h2 align="center" style="margin-bottom: 5px;">
+  <b>Exploratory Data Analysis ⸙</b>
+</h2>
+<p align="center" style="margin-top: 0;">
+  Using PYRAMID FRAMEWORK: Key Metrics and Measures
+</p>
+<hr>
+ 
+### ╰┈➤ Conceptualize the Dashboard
+ 
+**What is the purpose of the dashboard?**
+ 
+The dashboard was created to perform Exploratory Data Analysis (EDA) using a diabetes dataset in Power BI. Its main purpose is to analyze diabetes-related health information and present insights through interactive visualizations and KPI measures.
+ 
+The dashboard helps users understand patterns and relationships between BMI, blood glucose level, smoking history, age group, and diabetes status.
+ 
+**What are the key metrics?**
+ 
+- Total Patients
+- Total Diabetes Cases
+- Diabetes Rate
+- Average Glucose
+- Average BMI
+- Average HbA1c
+- Average Age
+---
+ 
+### ╰┈➤ Visualizations Used
+ 
+#### 1. KPI Cards
+- Used to display important summary metrics such as Total Patients, Diabetes Cases, Diabetes Rate, and Average Glucose.
+#### 2. Bar Chart
+- Used to visualize diabetes cases by age group to identify which age category has higher diabetes occurrences.
+#### 3. Line Graph
+- Used to analyze diabetes trends by year and observe changes over time.
+#### 4. Pie Chart
+- Used to display the distribution of smoking history categories among patients.
+#### 5. Scatter Plot
+- Used to analyze the relationship between BMI and Blood Glucose Level. Each point in the scatter plot represents one patient.
+#### 6. Patient Details Table
+- Used to display detailed patient information such as patient ID, age group, gender, BMI, blood glucose level, and diabetes status.
+#### 7. Slicers and Filters
+- Added to allow interactive filtering by year, gender, age group, and smoking history.
+---
+ 
+### ╰┈➤ DAX Measures Created
+ 
+#### 1. Total Patients
+```
+Total Patients = COUNT(diabetes_cleaned[patient_id])
+```
+ 
+#### 2. Total Diabetes Cases
+```
+Total Diabetes Cases = SUM(diabetes_cleaned[diabetes])
+```
+ 
+#### 3. Average Glucose
+```
+Average Glucose = AVERAGE(diabetes_cleaned[blood_glucose_level])
+```
+ 
+#### 4. Diabetes Rate
+```
+Diabetes Rate = DIVIDE(SUM(diabetes_cleaned[diabetes]), COUNT(diabetes_cleaned[patient_id]))
+```
+ 
+---
+ 
+### ╰┈➤ Dashboard Layout Using Pyramid Framework
+ 
+#### Top Level — KPI
+- Total Patients
+- Total Diabetes Cases
+- Diabetes Rate
+- Average Glucose
+#### Middle Level — Analysis
+- Diabetes Cases by Age Group
+- Diabetes Cases by Year
+- Diabetes Cases by Smoking History
+#### Detailed Level — Analysis
+- BMI vs Blood Glucose Scatter Plot
+- Patient Details Table
+- Interactive Filters and Slicers
+---
+ 
+### ╰┈➤ Model View Organization
+ 
+A separate KPI Measures table was created to organize all DAX measures used in the dashboard. The `diabetes_cleaned` table contains the raw dataset, while the `KPI Measures` table contains calculated measures such as Total Patients, Diabetes Rate, and Average Glucose.
+ 
+---
+ 
+### ╰┈➤ Insights Gathered
+ 
+- Senior and Middle-Aged groups have higher diabetes cases.
+- Patients with higher BMI tend to have higher blood glucose levels.
+- Smoking history categories such as "Never" and "No Info" contain the largest patient counts.
+- The dashboard allows users to explore the dataset interactively through slicers and filters.
+---
+ 
+### ╰┈➤ Conclusion
+ 
+The EDA Dashboard successfully presented important diabetes-related insights using Power BI visualizations and KPI measures. The project demonstrated how Exploratory Data Analysis can help analyze healthcare data and identify trends and relationships among different variables.
+
+<br><br><br>
+
+ <h2 align="center" style="margin-bottom: 5px;">
+  <b>Insights and Recommendations ⸙</b>
+</h2>
+ 
+### ╰┈➤ Age Group and Diabetes Risk
+ 
+**Insight**
+The dashboard showed that senior patients recorded the highest number of diabetes cases at around 3.9K, followed by middle-aged patients with approximately 2.9K cases. Younger age groups such as teens and children had significantly fewer recorded cases. This indicates that diabetes risk becomes more common as age increases.
+ 
+**Real-World Context**
+In real healthcare situations, older adults are more vulnerable to diabetes because of reduced physical activity, slower metabolism, and long-term lifestyle habits. As populations continue to age, healthcare facilities may experience an increasing number of diabetes-related cases and complications.
+ 
+**Recommendation**
+Healthcare institutions should prioritize regular diabetes screening and health awareness programs for middle-aged and senior individuals. Community clinics and hospitals may also implement preventive wellness programs focused on healthy aging and disease prevention.
+ 
+---
+ 
+### ╰┈➤ BMI and Blood Glucose Relationship
+ 
+**Insight**
+The scatter plot showed that many patients with higher blood glucose levels also had moderate to high BMI values. This suggests a possible relationship between body weight and diabetes cases within the dataset.
+ 
+**Real-World Context**
+In real-life situations, obesity is commonly associated with higher diabetes risk because excess body fat may affect insulin function and blood sugar regulation. Sedentary lifestyles and unhealthy eating habits may contribute to increasing BMI levels among patients.
+ 
+**Recommendation**
+Healthcare providers should promote proper nutrition, regular exercise, and weight management programs. Patients with high BMI levels should also be encouraged to undergo regular blood glucose monitoring for early detection of diabetes.
+ 
+---
+ 
+### ╰┈➤ Smoking History Among Patients
+ 
+**Insight**
+The smoking history chart revealed that many diabetes patients were categorized as former smokers and current smokers. Smoking history appeared to be one of the common characteristics observed among patients in the dataset.
+ 
+**Real-World Context**
+Smoking may contribute to poor blood circulation and other health complications that can worsen diabetes conditions. In many communities, smoking remains a major public health issue linked to chronic diseases.
+ 
+**Recommendation**
+Hospitals and healthcare organizations should strengthen smoking cessation programs and include diabetes education in anti-smoking campaigns. Patients with smoking history may also benefit from regular health monitoring and counseling services.
+ 
+---
+ 
+### ╰┈➤ Yearly Trend of Diabetes Cases
+ 
+**Insight**
+The line graph displayed a noticeable increase in diabetes cases around 2019 compared to other years in the dataset. This trend may indicate increased diagnosis, lifestyle changes, or improved health screening activities during that period.
+ 
+**Real-World Context**
+Monitoring yearly health trends is important because sudden increases in disease cases may place additional pressure on healthcare services and medical resources. Changes in lifestyle patterns and public health conditions may also influence diabetes rates over time.
+ 
+**Recommendation**
+Healthcare institutions should continue using data analytics and dashboards to monitor yearly diabetes trends. Consistent monitoring may help improve healthcare planning, resource allocation, and prevention strategies for future diabetes cases.
