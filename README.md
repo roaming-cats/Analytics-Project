@@ -1,7 +1,27 @@
-# ✴︎ Data Cleaning & Preparation Documentation ✴︎
-Using the CLEAN framework (Conceptualize, Locate, Evaluate, Augment, Note)
----
+<h1 align="center">
+   Data Analytics Group 4 ✴︎
+</h1>
+
+<h2 align="center" style="margin-bottom: 5px;">
+  <b>Data Collection ⸙</b>
+</h2>
  
+- **Dataset Name:** Comprehensive Diabetes Clinical Dataset
+- **Contains:** 100,000 records
+- **Description:** This dataset comprises health and demographic data of 100,000 individuals, including gender, age, race, lifestyle factors, and key clinical markers aimed at supporting diabetes research and predictive modeling.
+- **Link:** https://www.kaggle.com/datasets/priyamchoksi/100000-diabetes-clinical-dataset
+
+<br><br>
+<h2 align="center" style="margin-bottom: 5px;">
+  <b>Data Preprocessing ⸙</b>
+</h2>
+
+<p align="center" style="margin-top: 0;">
+  Using the CLEAN framework (Conceptualize, Locate, Evaluate, Augment, Note)
+</p>
+
+---
+
 ## ╰┈➤ Conceptualize the Data
  
 **What does each row represent?**
