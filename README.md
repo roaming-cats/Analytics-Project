@@ -198,7 +198,7 @@ A separate KPI Measures table was created to organize all DAX measures used in t
  
 The EDA Dashboard successfully presented important diabetes-related insights using Power BI visualizations and KPI measures. The project demonstrated how Exploratory Data Analysis can help analyze healthcare data and identify trends and relationships among different variables.
 
-<img width="1024" height="577" alt="image" src="https://github.com/user-attachments/assets/eaed6383-e802-4a31-9097-442331f5bf2f" />
+<img width="1129" height="622" alt="image" src="https://github.com/user-attachments/assets/8fd76ba4-405c-4100-9efd-de35f8b6013a" />
 
 <br><br><br>
 
@@ -223,7 +223,7 @@ The data model in this Power BI file is built on a single flat table named `diab
 
 The following calculated measures were created inside the `diabetes_cleaned` table and are used to power the KPI cards and chart values:
 
-> 📷 *[Image placeholder for DAX Measures]*
+<img width="623" height="232" alt="image" src="https://github.com/user-attachments/assets/50ee7678-98d6-46bd-865f-9db852677073" />
 
 #### 2.2 Data Schema Approach
 
@@ -234,11 +234,11 @@ The model uses a **single-table (flat) schema**, meaning all columns — both di
 - Allows Power BI slicers and filters to work directly against all columns
 - Supports all descriptive analytics and forecasting requirements without joins
 
-> 💡 For a more scalable production model, this could be extended to a **Star Schema** by splitting out dimension tables (`dim_Patient`, `dim_Location`, `dim_Ra
+> For a more scalable production model, this could be extended to a **Star Schema** by splitting out dimension tables (`dim_Patient`, `dim_Location`, `dim_Ra
 
 <br><br><br>
 
-### ╰┈➤ 4. Dashboard Design
+<h2 align="center" style="margin-bottom: 5px;"> <b>Dashboard Design ⸙</b> </h2>
 
 The dashboard consists of a **single report page** containing **12 visual elements**. All visuals reference the `diabetes_cleaned` table and respond to the four slicers for interactive filtering.
 
@@ -256,15 +256,15 @@ The dashboard consists of a **single report page** containing **12 visual elemen
 
 The page contains four chart visuals that provide descriptive analytics across different dimensions:
 
-> 📷 *[Image placeholder for Chart Visuals]*
+<img width="623" height="256" alt="image" src="https://github.com/user-attachments/assets/66071ab8-634f-4a3e-8ec3-c9dce226a15d" />
 
 #### 4.3 Slicers & Interactivity
 
 Four slicer visuals are positioned along the right side of the report page. They enable **interactive cross-filtering** — selecting any value in a slicer automatically filters all four chart visuals and the KPI cards simultaneously.
 
-> 📷 *[Image placeholder for Slicers]*
+<img width="625" height="232" alt="image" src="https://github.com/user-attachments/assets/0b74c808-1f33-469a-95c0-66ea442ba38d" />
 
-> 💡 Cross-filtering is enabled by default (`defaultDrillFilterOtherVisuals = true` in the report config), meaning clicking any data point on a chart also acts as a filter on all other visuals on the page.
+>  Cross-filtering is enabled by default (`defaultDrillFilterOtherVisuals = true` in the report config), meaning clicking any data point on a chart also acts as a filter on all other visuals on the page.
 
 ---
 
@@ -279,6 +279,8 @@ Based on the visuals and data in the dashboard, the following insights are drawn
 - **Caucasian patients** represent the largest share of diabetic cases by race, followed by African American and Hispanic patients
 - **Average HbA1c of 5.53%** is within the normal range overall, but diabetic patients individually show significantly higher readings
 - **Average blood glucose of 138 mg/dL** falls within the pre-diabetic range, suggesting many patients are at elevated risk
+
+<img width="1280" height="719" alt="image" src="https://github.com/user-attachments/assets/ed88247c-2abd-4d43-bdae-9e4cc5b60cce" />
 
 <br><br><br>
 
