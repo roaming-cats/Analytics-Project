@@ -208,8 +208,6 @@ The EDA Dashboard successfully presented important diabetes-related insights usi
 
 ---
 
-<img width="1280" height="719" alt="image" src="https://github.com/user-attachments/assets/ed88247c-2abd-4d43-bdae-9e4cc5b60cce" />
-
 <img width="1022" height="706" alt="image" src="https://github.com/user-attachments/assets/70dc387a-13ce-4e18-abe4-f3683bde210b" />
 
 ### ╰┈➤ 1. Project Overview
@@ -244,6 +242,8 @@ The model uses a **single-table (flat) schema**, meaning all columns — both di
 <br><br><br>
 
 <h2 align="center" style="margin-bottom: 5px;"> <b>Dashboard Design ⸙</b> </h2>
+
+<img width="1280" height="719" alt="image" src="https://github.com/user-attachments/assets/ed88247c-2abd-4d43-bdae-9e4cc5b60cce" />
 
 The dashboard consists of a **single report page** containing **12 visual elements**. All visuals reference the `diabetes_cleaned` table and respond to the four slicers for interactive filtering.
 
