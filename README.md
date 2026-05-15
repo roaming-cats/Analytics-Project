@@ -103,7 +103,9 @@ Each row represents a unique clinical encounter or medical profile of an individ
 <hr>
 
 <img width="1129" height="622" alt="image" src="https://github.com/user-attachments/assets/8fd76ba4-405c-4100-9efd-de35f8b6013a" />
- 
+
+<img width="1092" height="695" alt="image" src="https://github.com/user-attachments/assets/2b23a637-b1b7-4750-8ef4-7b6f6bfed520" />
+
 ### ╰┈➤ Conceptualize the Dashboard
  
 **What is the purpose of the dashboard?**
