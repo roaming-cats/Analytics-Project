@@ -340,3 +340,8 @@ Monitoring yearly health trends is important because sudden increases in disease
  
 **Recommendation**
 Healthcare institutions should continue using data analytics and dashboards to monitor yearly diabetes trends. Consistent monitoring may help improve healthcare planning, resource allocation, and prevention strategies for future diabetes cases.
+
+
+### ╰┈➤ Wireframe
+
+<img width="1157" height="648" alt="image" src="https://github.com/user-attachments/assets/d847319e-8fb5-4ecc-9918-7fae208bf9b5" />
