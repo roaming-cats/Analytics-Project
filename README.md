@@ -202,6 +202,86 @@ The EDA Dashboard successfully presented important diabetes-related insights usi
 
 <br><br><br>
 
+<h2 align="center" style="margin-bottom: 5px;"> <b>Data Modeling / Analytics ⸙</b> </h2>
+<p align="center" style="margin-top: 0;"> Following the DASH Framework for Dashboard Development </p>
+
+---
+
+### ╰┈➤ 1. Project Overview
+
+**What does this dashboard analyze?**
+
+The dashboard analyzes diabetes prevalence across the United States using a single cleaned dataset containing **100,000 patient records from 2015 to 2022**, covering all US states.
+
+---
+
+### ╰┈➤ 2. Data Model
+
+The data model in this Power BI file is built on a single flat table named `diabetes_cleaned`, loaded and transformed directly from the source Excel dataset. This approach uses a **flat/denormalized model** rather than a fully normalized Star Schema, making it straightforward to implement while still supporting all required analytical queries.
+
+#### 2.1 DAX Measures
+
+The following calculated measures were created inside the `diabetes_cleaned` table and are used to power the KPI cards and chart values:
+
+> 📷 *[Image placeholder for DAX Measures]*
+
+#### 2.2 Data Schema Approach
+
+The model uses a **single-table (flat) schema**, meaning all columns — both dimensions (`age_group`, `gender`, `race`, `location`, `smoking_history`) and facts (`bmi`, `hbA1c_level`, `blood_glucose_level`, `diabetes`) — reside in one table. This approach:
+
+- Eliminates the need for relationship management between multiple tables
+- Is suitable for datasets of this size and complexity (100,000 rows, 13 columns)
+- Allows Power BI slicers and filters to work directly against all columns
+- Supports all descriptive analytics and forecasting requirements without joins
+
+> 💡 For a more scalable production model, this could be extended to a **Star Schema** by splitting out dimension tables (`dim_Patient`, `dim_Location`, `dim_Ra
+
+<br><br><br>
+
+### ╰┈➤ 4. Dashboard Design
+
+The dashboard consists of a **single report page** containing **12 visual elements**. All visuals reference the `diabetes_cleaned` table and respond to the four slicers for interactive filtering.
+
+#### 4.1 KPIs
+
+| Measure | DAX Formula |
+|---|---|
+| Total Records | `COUNTROWS(fact_DiabetesRecords)` |
+| Diabetic Cases | `CALCULATE(COUNTROWS(fact_DiabetesRecords), fact_DiabetesRecords[diabetes] = 1)` |
+| Diabetes Prevalence % | `DIVIDE([Diabetic Cases], [Total Records]) * 100` |
+| Avg HbA1c | `AVERAGE(fact_DiabetesRecords[hbA1c_level])` |
+| Avg Blood Glucose | `AVERAGE(fact_DiabetesRecords[blood_glucose_level])` |
+
+#### 4.2 Chart Visuals
+
+The page contains four chart visuals that provide descriptive analytics across different dimensions:
+
+> 📷 *[Image placeholder for Chart Visuals]*
+
+#### 4.3 Slicers & Interactivity
+
+Four slicer visuals are positioned along the right side of the report page. They enable **interactive cross-filtering** — selecting any value in a slicer automatically filters all four chart visuals and the KPI cards simultaneously.
+
+> 📷 *[Image placeholder for Slicers]*
+
+> 💡 Cross-filtering is enabled by default (`defaultDrillFilterOtherVisuals = true` in the report config), meaning clicking any data point on a chart also acts as a filter on all other visuals on the page.
+
+---
+
+### ╰┈➤ 5. Key Findings
+
+Based on the visuals and data in the dashboard, the following insights are drawn:
+
+- **Overall diabetes prevalence is 8.5%** — 8,500 out of 100,000 patients are diabetic
+- **Older age groups** have significantly higher diabetic case counts, with the steepest rise occurring between the **30–44** and **45–59** brackets
+- **Current and former smokers** show consistently higher diabetic case counts compared to patients who have never smoked
+- The **year-on-year line chart** shows an upward trend in cases from 2015 to 2022, with the forecast extending this trend through 2024
+- **Caucasian patients** represent the largest share of diabetic cases by race, followed by African American and Hispanic patients
+- **Average HbA1c of 5.53%** is within the normal range overall, but diabetic patients individually show significantly higher readings
+- **Average blood glucose of 138 mg/dL** falls within the pre-diabetic range, suggesting many patients are at elevated risk
+
+<br><br><br>
+
  <h2 align="center" style="margin-bottom: 5px;">
   <b>Insights and Recommendations ⸙</b>
 </h2>
