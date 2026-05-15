@@ -101,6 +101,8 @@ Each row represents a unique clinical encounter or medical profile of an individ
   Using PYRAMID FRAMEWORK: Key Metrics and Measures
 </p>
 <hr>
+
+<img width="1129" height="622" alt="image" src="https://github.com/user-attachments/assets/8fd76ba4-405c-4100-9efd-de35f8b6013a" />
  
 ### ╰┈➤ Conceptualize the Dashboard
  
@@ -109,6 +111,7 @@ Each row represents a unique clinical encounter or medical profile of an individ
 The dashboard was created to perform Exploratory Data Analysis (EDA) using a diabetes dataset in Power BI. Its main purpose is to analyze diabetes-related health information and present insights through interactive visualizations and KPI measures.
  
 The dashboard helps users understand patterns and relationships between BMI, blood glucose level, smoking history, age group, and diabetes status.
+
  
 **What are the key metrics?**
  
@@ -198,14 +201,14 @@ A separate KPI Measures table was created to organize all DAX measures used in t
  
 The EDA Dashboard successfully presented important diabetes-related insights using Power BI visualizations and KPI measures. The project demonstrated how Exploratory Data Analysis can help analyze healthcare data and identify trends and relationships among different variables.
 
-<img width="1129" height="622" alt="image" src="https://github.com/user-attachments/assets/8fd76ba4-405c-4100-9efd-de35f8b6013a" />
-
 <br><br><br>
 
 <h2 align="center" style="margin-bottom: 5px;"> <b>Data Modeling / Analytics ⸙</b> </h2>
 <p align="center" style="margin-top: 0;"> Following the DASH Framework for Dashboard Development </p>
 
 ---
+
+<img width="1280" height="719" alt="image" src="https://github.com/user-attachments/assets/ed88247c-2abd-4d43-bdae-9e4cc5b60cce" />
 
 ### ╰┈➤ 1. Project Overview
 
@@ -279,8 +282,6 @@ Based on the visuals and data in the dashboard, the following insights are drawn
 - **Caucasian patients** represent the largest share of diabetic cases by race, followed by African American and Hispanic patients
 - **Average HbA1c of 5.53%** is within the normal range overall, but diabetic patients individually show significantly higher readings
 - **Average blood glucose of 138 mg/dL** falls within the pre-diabetic range, suggesting many patients are at elevated risk
-
-<img width="1280" height="719" alt="image" src="https://github.com/user-attachments/assets/ed88247c-2abd-4d43-bdae-9e4cc5b60cce" />
 
 <br><br><br>
 
