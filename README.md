@@ -212,6 +212,8 @@ The EDA Dashboard successfully presented important diabetes-related insights usi
 
 <img width="1280" height="719" alt="image" src="https://github.com/user-attachments/assets/ed88247c-2abd-4d43-bdae-9e4cc5b60cce" />
 
+<img width="1022" height="706" alt="image" src="https://github.com/user-attachments/assets/70dc387a-13ce-4e18-abe4-f3683bde210b" />
+
 ### ╰┈➤ 1. Project Overview
 
 **What does this dashboard analyze?**
